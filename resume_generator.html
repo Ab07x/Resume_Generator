@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f2f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .resume-output {
+      margin-top: 30px;
+      border-top: 2px solid #ccc;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Generator</h1>
+    <label>Name</label>
+    <input id="name" type="text" placeholder="Your full name"/>
+
+    <label>Job Title</label>
+    <input id="title" type="text" placeholder="e.g., Full Stack Developer"/>
+
+    <label>Summary</label>
+    <textarea id="summary" rows="4" placeholder="A short professional summary"></textarea>
+
+    <label>Skills (comma-separated)</label>
+    <input id="skills" type="text" placeholder="e.g., Python, JavaScript, React"/>
+
+    <label>Education</label>
+    <textarea id="education" rows="3" placeholder="e.g., BSc in Computer Science"></textarea>
+
+    <label>Experience</label>
+    <textarea id="experience" rows="5" placeholder="e.g., Company - Role - Duration - Responsibilities"></textarea>
+
+    <button onclick="generateResume()">Generate Resume</button>
+
+    <div class="resume-output" id="resumeOutput"></div>
+  </div>
+
+  <script>
+    function generateResume() {
+      const name = document.getElementById("name").value;
+      const title = document.getElementById("title").value;
+      const summary = document.getElementById("summary").value;
+      const skills = document.getElementById("skills").value;
+      const education = document.getElementById("education").value;
+      const experience = document.getElementById("experience").value;
+
+      const output = \`
+        <h2>\${name}</h2>
+        <h3>\${title}</h3>
+        <p><strong>Summary:</strong> \${summary}</p>
+        <p><strong>Skills:</strong> \${skills}</p>
+        <p><strong>Education:</strong><br/>\${education.replace(/\n/g, "<br/>")}</p>
+        <p><strong>Experience:</strong><br/>\${experience.replace(/\n/g, "<br/>")}</p>
+      \`;
+
+      document.getElementById("resumeOutput").innerHTML = output;
+    }
+  </script>
+</body>
+</html>
