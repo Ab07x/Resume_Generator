@@ -6,7 +6,7 @@ A modern and minimalistic web-based Resume Generator that allows users to input 
 
 ## 📸 Screenshot
 
-![Resume Generator Screenshot](screenshot.png)
+![Resume Generator Screenshot](screenshot1.png)
 
 ---
 
@@ -53,4 +53,12 @@ A modern and minimalistic web-based Resume Generator that allows users to input 
 ---
 
 ## 📂 Project Structure
+resume-generator/ │ ├── resume_generator.html # Main app file ├── screenshot.png # Preview image for GitHub └── README.md # This file
+
+
+---
+
+**Built by Abdullahi Ahmed – 2025**  
+Inspired by simplicity. Designed for impact.
+
 
